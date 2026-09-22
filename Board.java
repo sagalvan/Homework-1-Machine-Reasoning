@@ -346,7 +346,6 @@ public class Board {
      * @return  the number of steps it takes to solve the board using relaxed agency
      */
     public int calculateh3() {
-        int[] state = getTiles();
         Board copy = new Board(tiles);
         int count = 0;
 
@@ -363,7 +362,7 @@ public class Board {
 
             else {
                 int value = copy.emptyRow * 3 + copy.emptyCol; // Get the value that should be in blank's position
-                int[] location = getTile(value); // Get the position of the value
+                int[] location = copy.getTile(value); // Get the position of the value
                 copy.tiles[copy.emptyRow * 3 + copy.emptyCol] = value; // Swap the tiles
                 copy.tiles[location[0] * 3 + location[1]] = 0;
                 copy.emptyRow = location[0]; // reinitalize empty tile location
@@ -372,7 +371,6 @@ public class Board {
             }
         }
 
-        this.tiles = state;
         return count;
     }
 }
