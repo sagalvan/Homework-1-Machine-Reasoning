@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -9,7 +8,7 @@ public class Experiments {
         HashMap<Integer, ArrayList<Integer>> finalMap =
                 new HashMap<>();
 
-        int numExperiments = 10;
+        int numExperiments = 100;
 
         for (int i = 0; i < numExperiments; i++) {
 
@@ -44,4 +43,6 @@ public class Experiments {
         MapTrack.calcAverages(finalMap);
     }
 }
+
+
 
